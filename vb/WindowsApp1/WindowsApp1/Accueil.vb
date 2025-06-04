@@ -26,6 +26,11 @@ Public Class Accueil
         End If
         RadioButton1.Checked = True
         Panel1.Visible = False
+
+        Dim front As String = IO.Path.Combine(Application.StartupPath, "Images", "front.jpg")
+
+        Me.BackgroundImage = Image.FromFile(front)
+        Me.BackgroundImageLayout = ImageLayout.Stretch
     End Sub
 
     Private Sub NouvellePartie_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -37,7 +42,7 @@ Public Class Accueil
             form2.NomJoueurF2(ComboBox1.Text.Trim)
             form2.Show()
         ElseIf ComboBox1.Text.Contains(";") Then
-            MessageBox.Show("Le nom contient le caractere interdit : ';' ")
+            MessageBox.Show("Le nom contient le caractere interdit  ';' ")
             ComboBox1.Focus()
         Else
             MessageBox.Show("Le nom doit contenir au minimum 3 caractères.")

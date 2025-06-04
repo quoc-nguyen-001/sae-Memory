@@ -75,6 +75,10 @@ Public Class Jeu
     Private Sub Jeu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         initInfo()
         initCard()
+        Dim front As String = IO.Path.Combine(Application.StartupPath, "Images", "front.jpg")
+
+        Me.BackgroundImage = Image.FromFile(front)
+        Me.BackgroundImageLayout = ImageLayout.Stretch
     End Sub
     Private Sub initInfo()
         secondesRestantes += tmp_add
